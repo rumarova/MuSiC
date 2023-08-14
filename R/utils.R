@@ -172,6 +172,7 @@ music_prop = function(bulk.mtx, sc.sce, markers = NULL, clusters, samples, selec
       if(sum(Yjg[, i] == 0) > 0){
         D1.temp = D1[Yjg[, i]!=0, ];
         Yjg.temp = Yjg[Yjg[, i]!=0, i];
+        names(Yjg.temp) <- rownames(Yjg[Yjg[, i]!=0, ]);
         Sigma.ct.temp = Sigma.ct[, Yjg[,i]!=0];
         if(verbose) message(paste(colnames(Yjg)[i], 'has common genes', sum(Yjg[, i] != 0), '...') )
       }else{
